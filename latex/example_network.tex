@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\begin{document}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c}
+         Layer Type & Output Shape & Activation & Parameters \\
+         \hline
+         Input & (num\_samples\_lead2, 1) & None & 0 \\
+         Conv1D & (num\_samples\_lead2/2, 32) & ReLU & 256 \\
+         BatchNorm1D & (num\_samples\_lead2/2, 32) & None & 128 \\
+         MaxPool1D & (num\_samples\_lead2/4, 32) & None & 0 \\
+         Dropout & (num\_samples\_lead2/4, 32) & None & 0 \\
+         Conv1D & (num\_samples\_lead2/8, 64) & ReLU & 4,160 \\
+         BatchNorm1D & (num\_samples\_lead2/8, 64) & None & 256 \\
+         MaxPool1D & (num\_samples\_lead2/16, 64) & None & 0 \\
+         Dropout & (num\_samples\_lead2/16, 64) & None & 0 \\
+         Flatten & (num\_samples\_lead2/16 * 64,) & None & 0 \\
+         Dense & (128,) & ReLU & 8,320 \\
+         Dropout & (128,) & None & 0 \\
+         Dense & (8,) & None & 1,032 \\
+    \end{tabular}
+    \caption{Lead Interpolation Model Architecture}
+\end{table}
+
+\end{document}

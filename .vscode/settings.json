@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "C:/Users/Jacob/anaconda3/envs/ptb-xl/python.exe"
+    "terminal.integrated.shellArgs.windows": ["/K", "conda activate ptb-xl"]
+}
