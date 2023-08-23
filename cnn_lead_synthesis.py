@@ -11,19 +11,13 @@ import torch.optim as optim
 import torch
 from sklearn.model_selection import train_test_split
 
-# Function to load raw data
-# Your load_raw_data function goes here. It seems fine.
-
-# Function to preprocess data
-# Your preprocess_data function goes here. It seems fine.
-
 # Function to encode the target variable
 def encode_labels(y):
     label_encoder = LabelEncoder()
     label_encoder.fit(y)
     return label_encoder, label_encoder.transform(y)
 
-# Create architecture  
+# Create architecture  -- SEE LATEX FOR DESIGN FILE
 def create_model(input_shape, num_classes):
     model = nn.Sequential(
         nn.Conv1d(input_shape[0], 32, kernel_size=5),
@@ -40,13 +34,8 @@ def create_model(input_shape, num_classes):
     )
     return model
 
-# Your data_directory and load_ecg_record function go here.
-
 # Load all the ECG records
 X = load_all_records(data_directory)
-
-# Assuming y (the labels) are correctly assigned here. If not, y should be properly assigned.
-# Your y goes here.
 
 # Preprocess data
 X_processed = preprocess_data(X)
